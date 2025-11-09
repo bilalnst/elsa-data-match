@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeyElsa Data Match</title>
+    <link rel="stylesheet" href="elsa.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app__header">
+            <div class="title-block">
+                <img src="assets/G040Y9bWIAAviGm.png" alt="HeyElsa logo" class="title-logo">
+                <div class="title-text">
+                    <h1>HeyElsa Data Match</h1>
+                    <p class="tagline">Find the ethical pairs and unlock your guardian badge.</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="startGame" class="btn primary">Start</button>
+                <button id="resetGame" class="btn ghost">Reset</button>
+            </div>
+        </header>
+
+        <section class="hud">
+            <div class="hud__item">
+                <span class="label">Moves</span>
+                <span id="moves">0</span>
+            </div>
+            <div class="hud__item">
+                <span class="label">Matches</span>
+                <span id="matches">0 / 6</span>
+            </div>
+            <div class="hud__item">
+                <span class="label">Time</span>
+                <span id="timer">00:00</span>
+            </div>
+            <div class="hud__item">
+                <span class="label">Badge</span>
+                <span id="badge">Data Rookie</span>
+            </div>
+        </section>
+
+        <main class="board">
+            <div id="cardGrid" class="card-grid" aria-live="polite"></div>
+            <div class="empty-state" id="emptyState">
+                <p>Elsa’s puzzle is waiting. Tap Start to begin!</p>
+            </div>
+        </main>
+
+        <aside class="insight">
+            <div class="insight__avatar" aria-hidden="true">
+                <img id="insightImage" src="assets/2025-11-08_03-45.png" alt="Elsa insight avatar">
+            </div>
+            <div>
+                <h2 id="insightTitle">Insight from Elsa</h2>
+                <p id="insightText">Match cards to unlock Elsa’s ethical tips.</p>
+            </div>
+        </aside>
+
+        <footer class="app__footer">
+            <p>Complete all pairs to earn your badge tier.</p>
+        </footer>
+    </div>
+
+    <template id="card-template">
+        <button class="card" data-pair="" data-type="" aria-label="Hidden card">
+            <div class="card__inner">
+                <div class="card__face card__face--front">
+                    <span>❔</span>
+                </div>
+                <div class="card__face card__face--back">
+                    <img class="card__image" src="" alt="">
+                    <div class="card__text">
+                        <h3 class="card__title"></h3>
+                        <p class="card__meta"></p>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </template>
+
+    <script src="elsa.js"></script>
+</body>
+</html>
+
